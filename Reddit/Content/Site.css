@@ -1,0 +1,55 @@
+﻿body {
+    padding-top: 0px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: #DAE0E6;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+.dropdown-toggle::after {
+    display: none;
+}
+.reddit-icon {
+    color: orangered;
+    margin-right: 10px;
+}
+.reddit-h1 {
+    margin-right: 50px;
+    letter-spacing: 2px;
+    font:bolder;
+}
+.dropdown-icon-pad-right{
+    padding-right: 5px;
+}
+.dropdown-menu a {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-right: 10px;
+}
+.card-container {
+    margin:auto;
+}
+.card-nav-footer {
+    padding-top:5px;
+    padding-bottom:5px;
+}
+#votes {
+    margin-bottom: 0px;
+}

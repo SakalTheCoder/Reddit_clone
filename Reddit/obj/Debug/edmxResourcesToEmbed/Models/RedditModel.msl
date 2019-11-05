@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="reddit_dbModelStoreContainer" CdmEntityContainer="reddit_dbEntities">
+    <EntitySetMapping Name="comments">
+      <EntityTypeMapping TypeName="reddit_dbModel.comment">
+        <MappingFragment StoreEntitySet="comment">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="NewsFeedPost_ID" ColumnName="NewsFeedPost_ID" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="newsfeedposts">
+      <EntityTypeMapping TypeName="reddit_dbModel.newsfeedpost">
+        <MappingFragment StoreEntitySet="newsfeedpost">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Caption" ColumnName="Caption" />
+          <ScalarProperty Name="Image_src" ColumnName="Image_src" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sub_reddit">
+      <EntityTypeMapping TypeName="reddit_dbModel.sub_reddit">
+        <MappingFragment StoreEntitySet="sub_reddit">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Sub_name" ColumnName="Sub_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="reddit_dbModel.user">
+        <MappingFragment StoreEntitySet="user">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

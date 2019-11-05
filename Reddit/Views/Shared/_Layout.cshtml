@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <link href="~/Content/font-awesome.css" rel="stylesheet" />
+
+</head>
+<body>
+    <!--Heading-->
+    <nav class="navbar navbar-expand-md navbar-light bg-light" style="box-shadow : 1px 1px 10px #a2a2a2">
+        <i class="fa fa-reddit reddit-icon fa-2x"></i>
+        <a class="navbar-brand reddit-h1" href="#">reddit</a>
+        <!--Dropdown Subreddit-->
+        <div class="dropdown col-lg-2" style="padding-left:0px;">
+            <a class="btn btn-secondary dropdown-toggle btn-sm col-lg-10 dropdown-menu-right btn-light btn-outline-secondary" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="text-align:left;">
+                <i class="fa fa-reddit-alien btn-outline-info"></i> Home
+                <i class="fa fa-sort-down" style="float:right"></i>
+            </a>
+
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="text-align:left;">
+                <a class="dropdown-item" href="#"><i class="fa fa-align-justify dropdown-icon-pad-right"></i>Home</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#"><i class="fa fa-bar-chart dropdown-icon-pad-right"></i>Popular</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#"><i class="fa fa-globe dropdown-icon-pad-right"></i>All</a>
+            </div>
+        </div>
+        <!--Search Bar-->
+        <form class="form-inline col-6">
+            <input class="form-control mr-sm-2 fa col-12 fa-font" type="search" placeholder="&#xf002; search reddit" style="padding:3px; height: 30px;">
+        </form>
+        <!--Icons-->
+        <a><i class="fa fa-line-chart" style="margin-right:10px;"></i></a>
+        <a><i class="fa fa-bar-chart" style="margin-right:10px;"></i></a>
+        <h4> | </h4>
+        <a><i class="fa fa-comment" style="margin-right:10px; margin-left:10px;"></i></a>
+        <a><i class="fa fa-envelope" style="margin-right:10px; margin-left:10px;"></i></a>
+        <a href="@Url.Action("Create", "newsfeedposts")"><i class="fa fa-pencil" style="margin-right:10px; margin-left:10px;"></i></a>
+        <!--Dropdown Account-->
+        <div class="dropdown col-lg-2" style="padding-left:0px;">
+            <a class="btn btn-secondary dropdown-toggle btn-sm col-lg-10 dropdown-menu-right btn-light btn-outline-secondary" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="text-align:left;">
+                <i class="fa fa-reddit-alien"></i> Login
+            </a>
+
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="text-align:left;">
+                <a class="dropdown-item" href="#"><i class="fa fa-align-justify dropdown-icon-pad-right"></i>Home</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#"><i class="fa fa-chart-bar"></i>Popular</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#"><i class="fa fa-globe dropdown-icon-pad-right"></i>All</a>
+            </div>
+        </div>
+    </nav>
+    <!--Body-->
+    <div class="container-fluid body-content">
+        @RenderBody()
+        <hr />
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
