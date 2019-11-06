@@ -10,6 +10,7 @@ using Reddit.Models;
 
 namespace Reddit.Controllers
 {
+    
     public class newsfeedpostsController : Controller
     {
         private reddit_dbEntities db = new reddit_dbEntities();
@@ -42,6 +43,7 @@ namespace Reddit.Controllers
         }
 
         // GET: newsfeedposts/Create
+        [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -51,6 +53,7 @@ namespace Reddit.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ID,Title,Caption,Image_src,User_ID")] newsfeedpost newsfeedpost)
         {

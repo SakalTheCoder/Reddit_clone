@@ -1,0 +1,52 @@
+﻿@model Reddit.Models.user
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Sign in</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <label class="control-label col-md-2" for="UsernameOrEmail">Username or Email</label>
+            <div class="col-md-4">
+                @Html.TextBox("UsernameOrEmail", null, new { @class = "form-control", placeholder = "Username Or Email" })
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.PasswordFor(model => model.Password, new { @class = "form-control", placeholder = "Password" })
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-inline" style="margin-top:20px; margin-bottom:10px;">
+            <div class="col-md-offset-2 col-md-4">
+                <div style="max-width:280px;">
+                    <input type="submit" value="Login" class="btn btn-outline-dark" />
+                    @Html.ActionLink("Sign Up ?", "SignUp", "Users", new object { }, new { @class = "btn btn-outline-dark float-right" })
+                </div>
+            </div>
+         </div>
+    </div>
+
+}
+
+<div>
+    @Html.ActionLink("Home", "Index","newsfeedposts")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

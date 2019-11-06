@@ -42,19 +42,37 @@
         <a><i class="fa fa-envelope" style="margin-right:10px; margin-left:10px;"></i></a>
         <a href="@Url.Action("Create", "newsfeedposts")"><i class="fa fa-pencil" style="margin-right:10px; margin-left:10px;"></i></a>
         <!--Dropdown Account-->
-        <div class="dropdown col-lg-2" style="padding-left:0px;">
-            <a class="btn btn-secondary dropdown-toggle btn-sm col-lg-10 dropdown-menu-right btn-light btn-outline-secondary" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="text-align:left;">
-                <i class="fa fa-reddit-alien"></i> Login
-            </a>
+        @if ((System.Web.HttpContext.Current.User != null) && System.Web.HttpContext.Current.User.Identity.IsAuthenticated == true)
+        {
+            <div class="dropdown col-lg-2" style="padding-left:0px;">
+                <a class="btn btn-secondary dropdown-toggle btn-sm col-lg-10 dropdown-menu-right btn-light btn-outline-secondary" href="@Url.Action("Login","Users")" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="text-align:left;">
+                    <i class="fa fa-reddit-alien btn-outline-info"></i> @Session["Username"]
+                    <i class="fa fa-sort-down" style="float:right"></i>
+                </a>
 
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="text-align:left;">
-                <a class="dropdown-item" href="#"><i class="fa fa-align-justify dropdown-icon-pad-right"></i>Home</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#"><i class="fa fa-chart-bar"></i>Popular</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#"><i class="fa fa-globe dropdown-icon-pad-right"></i>All</a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="text-align:left;">
+                    <a class="dropdown-item" href="#"><i class="fa fa-save dropdown-icon-pad-right"></i>Saved</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="@Url.Action("LogOut","Users")"><i class="fa fa-sign-out dropdown-icon-pad-right"></i>Log out</a>
+                </div>
             </div>
-        </div>
+        }
+        else
+        {
+            <div class="dropdown col-lg-2" style="padding-left:0px; max-width:200px;">
+                <a class="btn btn-secondary dropdown-toggle btn-sm col-lg-10 dropdown-menu-right btn-light btn-outline-secondary" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="text-align:left;">
+                    <i class="fa fa-reddit-alien btn-outline-info"></i> Login
+                    <i class="fa fa-sort-down" style="float:right"></i>
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="text-align:left;">
+                    <a class="dropdown-item" href="@Url.Action("Login","Users")" style="margin-bottom:8px"><i class="fa fa-sign-in dropdown-icon-pad-right"></i>Login</a>
+                    <a class="dropdown-item" href="@Url.Action("SignUp","Users")" style="margin-bottom:8px"><i class="fa fa-user dropdown-icon-pad-right"></i>Sign Up</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#"><i class="fa fa-question-circle dropdown-icon-pad-right"></i>Help</a>
+                </div>
+            </div>
+        }
     </nav>
     <!--Body-->
     <div class="container-fluid body-content">

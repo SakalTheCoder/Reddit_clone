@@ -43,13 +43,33 @@ textarea {
     padding-bottom: 0px;
     padding-right: 10px;
 }
+.cardpost-body {
+    float: left;
+    padding-left: 0px
+}
 .card-container {
     margin:auto;
 }
 .card-nav-footer {
     padding-top:5px;
     padding-bottom:5px;
+    padding-left:10px;
 }
-#votes {
+.card-border-body {
+    border-color: lightgray;
+}
+.votes {
     margin-bottom: 0px;
+}
+.votes-container {
+    float: left;
+    padding-right: 0px;
+    text-align: center;
+    padding-top: 20px;
+}
+.upvote-icon {
+    display: block;
+}
+.downvote-icon {
+    display: inline;
 }

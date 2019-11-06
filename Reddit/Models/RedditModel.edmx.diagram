@@ -8,7 +8,7 @@
         <EntityTypeShape EntityType="reddit_dbModel.comment" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="reddit_dbModel.newsfeedpost" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="reddit_dbModel.sub_reddit" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="reddit_dbModel.user" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="reddit_dbModel.user" Width="1.5" PointX="3.125" PointY="3.625" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
